@@ -1,0 +1,92 @@
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.timer-display {
+  font-size: 72px;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  min-width: 120px;
+  text-align: center;
+  color: #f7fafc;
+  transition: color 0.3s ease;
+}
+
+.timer-display.warning {
+  color: #e53e3e;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.timer-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.timer-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.timer-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.timer-button--start {
+  background-color: #38a169;
+  color: white;
+}
+
+.timer-button--start:hover:not(:disabled) {
+  background-color: #2f855a;
+}
+
+.timer-button--pause {
+  background-color: #dd6b20;
+  color: white;
+}
+
+.timer-button--pause:hover:not(:disabled) {
+  background-color: #c05621;
+}
+
+.timer-button--resume {
+  background-color: #3182ce;
+  color: white;
+}
+
+.timer-button--resume:hover:not(:disabled) {
+  background-color: #2c5282;
+}
+
+.timer-button--reset {
+  background-color: #718096;
+  color: white;
+}
+
+.timer-button--reset:hover:not(:disabled) {
+  background-color: #4a5568;
+}

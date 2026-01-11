@@ -1,8 +1,14 @@
+import { Timer } from './components/Timer';
+
 function App() {
+  const handleTimerComplete = () => {
+    console.log('タイマー終了！');
+  };
+
   return (
-    <div>
+    <div className="app">
       <h1>瞬発思考</h1>
-      <p>アプリケーションを読み込み中...</p>
+      <Timer onComplete={handleTimerComplete} />
     </div>
   );
 }
