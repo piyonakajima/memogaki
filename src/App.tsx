@@ -1,14 +1,22 @@
-import { Timer } from './components/Timer';
+import { WritingMode } from './components/WritingMode';
 
 function App() {
-  const handleTimerComplete = () => {
-    console.log('タイマー終了！');
+  const handleChange = (text: string) => {
+    console.log('入力中:', text);
+  };
+
+  const handleComplete = (text: string) => {
+    console.log('書き出し完了:', text);
   };
 
   return (
     <div className="app">
       <h1>瞬発思考</h1>
-      <Timer onComplete={handleTimerComplete} />
+      <WritingMode
+        autoStart={true}
+        onChange={handleChange}
+        onComplete={handleComplete}
+      />
     </div>
   );
 }

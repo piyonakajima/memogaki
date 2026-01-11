@@ -20,6 +20,10 @@ Kiro-style Spec Driven Development implementation on AI-DLC (AI Development Life
 #### Current Specs
 - `project-setup`: プロジェクト初期セットアップ（React + TypeScript + Vite、GitHub Pages設定、ESLint/Prettier） ✅完了
 - `timer-core`: タイマーコア機能（20秒カウントダウン、開始/停止/リセット、終了コールバック）
+- `3`: 書き出しモード（テキスト入力エリア、スマホ対応レスポンシブ、タイマー連携、ヒント表示） ✅完了
+- `4`: 読み返しモード（書いた内容表示、追記機能、次へボタン、回数表示）
+- `5`: セッション管理（繰り返し回数設定、モード切替、進行状態管理、完了判定）
+- `6`: 結果出力機能（全メモ一覧表示、クリップボードコピー、AI貼り付け案内、コピー完了フィードバック）
 
 ## Development Guidelines
 - Think in English, generate responses in English. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).
