@@ -18,7 +18,8 @@ Kiro-style Spec Driven Development implementation on AI-DLC (AI Development Life
 - Use `/kiro:spec-status [feature-name]` to check progress
 
 #### Current Specs
-- `project-setup`: プロジェクト初期セットアップ（React + TypeScript + Vite、GitHub Pages設定、ESLint/Prettier）
+- `project-setup`: プロジェクト初期セットアップ（React + TypeScript + Vite、GitHub Pages設定、ESLint/Prettier） ✅完了
+- `timer-core`: タイマーコア機能（20秒カウントダウン、開始/停止/リセット、終了コールバック）
 
 ## Development Guidelines
 - Think in English, generate responses in English. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).
