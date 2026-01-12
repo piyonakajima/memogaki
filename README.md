@@ -52,6 +52,29 @@
 2. **中期**: 宣伝し、自分で3週間継続使用する
 3. **長期**: モバイルアプリ化 → サブスクリプション化
 
+## 開発者向け
+
+### Claude Code レビューコマンド
+
+コード品質チェック用のカスタムスラッシュコマンドを用意しています。
+
+| コマンド | 説明 |
+|---------|------|
+| `/review:atomic` | Atomic Design準拠チェック |
+| `/review:test` | テストカバレッジ・要件チェック |
+
+#### 使用例
+
+```bash
+# Atomic Design レビュー
+/review:atomic              # 全体チェック
+/review:atomic src/components/  # 特定パスのみ
+
+# テストレビュー
+/review:test                # 全体チェック
+/review:test timer-core     # 特定featureのみ（kiro spec連携）
+```
+
 ## 参考
 
 - [zerosec.md](zerosec.md) - 「ゼロ秒思考」メソッドの詳細
