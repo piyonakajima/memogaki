@@ -1,0 +1,113 @@
+/* ResumeDialog - 中断セッション再開確認ダイアログ */
+
+.resume-dialog {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(61, 61, 61, 0.5);
+  z-index: 100;
+  padding: var(--spacing-sm);
+}
+
+.resume-dialog__content {
+  background: var(--color-bg-paper);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(139, 115, 85, 0.2);
+  animation: resume-dialog-appear 0.2s ease-out;
+}
+
+@keyframes resume-dialog-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.resume-dialog__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+.resume-dialog__info {
+  font-size: var(--font-size-body);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-md);
+  line-height: var(--line-height-body);
+}
+
+.resume-dialog__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.resume-dialog__button {
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-body);
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.resume-dialog__button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.resume-dialog__button:active {
+  transform: scale(0.98);
+}
+
+.resume-dialog__button--resume {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.resume-dialog__button--resume:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.resume-dialog__button--new {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+.resume-dialog__button--new:hover {
+  background-color: var(--color-border);
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+  .resume-dialog__content {
+    padding: 2.5rem;
+  }
+
+  .resume-dialog__title {
+    font-size: 1.5rem;
+  }
+
+  .resume-dialog__buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .resume-dialog__button {
+    flex: 0 0 auto;
+    min-width: 140px;
+  }
+}

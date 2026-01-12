@@ -1,0 +1,22 @@
+.ad-banner {
+  width: 100%;
+}
+
+.ad-banner__unit {
+  width: 100%;
+  height: auto;
+  min-height: 50px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .ad-banner__unit {
+    min-height: 50px;
+  }
+}
+
+@media (min-width: 769px) {
+  .ad-banner__unit {
+    min-height: 60px;
+  }
+}

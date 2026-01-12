@@ -32,6 +32,11 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_ADSENSE_PUBLISHER_ID: ${{ secrets.VITE_ADSENSE_PUBLISHER_ID }}
+          VITE_ADSENSE_SLOT_ID: ${{ secrets.VITE_ADSENSE_SLOT_ID }}
+          VITE_ADSENSE_ENABLED: ${{ secrets.VITE_ADSENSE_ENABLED }}
+          VITE_ADSENSE_TEST_MODE: ${{ secrets.VITE_ADSENSE_TEST_MODE }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

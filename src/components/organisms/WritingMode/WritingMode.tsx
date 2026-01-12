@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useTimer } from '../../hooks/useTimer';
-import type { WritingModeProps } from '../../types/writing';
-import { DEFAULT_PLACEHOLDER } from '../../types/writing';
+import { useTimer } from '../../../hooks/useTimer';
+import type { WritingModeProps } from '../../../types/writing';
+import { DEFAULT_PLACEHOLDER } from '../../../types/writing';
 import './WritingMode.css';
 
 export function WritingMode({
@@ -9,6 +9,8 @@ export function WritingMode({
   initialText = '',
   placeholder = DEFAULT_PLACEHOLDER,
   autoStart = false,
+  currentRound,
+  totalRounds,
   onChange,
   onComplete,
   className,
@@ -59,11 +61,17 @@ export function WritingMode({
       className={`writing-mode ${className ?? ''}`}
       data-testid="writing-mode-container"
     >
+      {currentRound && totalRounds && (
+        <div className="writing-mode__progress" data-testid="progress-indicator">
+          Round {currentRound} / {totalRounds}
+        </div>
+      )}
+
       <div
         className={`writing-mode__timer ${isWarning ? 'warning' : ''}`}
         data-testid="timer-display"
       >
-        {seconds}
+        {seconds}<span className="writing-mode__timer-unit">秒</span>
       </div>
 
       {isWarning && (

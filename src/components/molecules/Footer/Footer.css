@@ -1,0 +1,57 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.footer__ad-container {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  min-height: 50px;
+  max-height: 60px;
+  overflow: hidden;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__privacy-link {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.footer__privacy-link:hover {
+  color: var(--color-text-secondary);
+}
+
+.footer__privacy-link:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .footer__ad-container {
+    min-height: 50px;
+  }
+}
+
+@media (min-width: 769px) {
+  .footer__ad-container {
+    min-height: 60px;
+  }
+}

@@ -23,7 +23,10 @@ Kiro-style Spec Driven Development implementation on AI-DLC (AI Development Life
 - `3`: 書き出しモード（テキスト入力エリア、スマホ対応レスポンシブ、タイマー連携、ヒント表示） ✅完了
 - `4`: 読み返しモード（書いた内容表示、追記機能、次へボタン、回数表示）
 - `5`: セッション管理（繰り返し回数設定、モード切替、進行状態管理、完了判定）
-- `6`: 結果出力機能（全メモ一覧表示、クリップボードコピー、AI貼り付け案内、コピー完了フィードバック）
+- `6`: 結果出力機能（全メモ一覧表示、クリップボードコピー、AI貼り付け案内、コピー完了フィードバック） ✅完了
+- `7`: ノート風テーマ・デザイン（黄色い優しい色味、ノート風UI、フォント選定、全体レイアウト）
+- `8`: ローカルストレージ保存（セッション履歴の保存、設定の永続化、データ読み込み/書き込み）
+- `9`: Google AdSense統合（フッター広告配置、プライバシーポリシーリンク、ディスプレイ広告）
 
 ## Development Guidelines
 - Think in English, generate responses in English. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).

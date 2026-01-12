@@ -1,5 +1,5 @@
-import { useTimer } from '../../hooks/useTimer';
-import type { TimerProps } from '../../types/timer';
+import { useTimer } from '../../../hooks/useTimer';
+import type { TimerProps } from '../../../types/timer';
 import './Timer.css';
 
 export function Timer({

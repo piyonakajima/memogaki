@@ -1,0 +1,143 @@
+/* モバイルファースト */
+.review-mode {
+  width: 100%;
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* 進行状況表示 */
+.review-mode__progress {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+/* メモカード - 紙風 */
+.review-mode__memo-card {
+  background: var(--color-bg-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-paper);
+  overflow: hidden;
+}
+
+.review-mode__memo-header {
+  background: var(--color-bg-secondary);
+  padding: 0.5rem var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.review-mode__memo-round {
+  font-size: var(--font-size-small);
+  font-weight: bold;
+  color: var(--color-text-secondary);
+}
+
+/* 編集可能テキストエリア - ノート風罫線 */
+.review-mode__textarea {
+  width: 100%;
+  min-height: calc(var(--line-height-body) * 1em + 1rem);
+  font-size: var(--font-size-body); /* iOS zoom防止 */
+  padding: var(--spacing-sm);
+  padding-top: 0.5rem;
+  resize: none;
+  border: none;
+  background-color: var(--color-bg-paper);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  line-height: var(--line-height-body);
+  text-align: left;
+  overflow: hidden;
+
+  /* ノート風罫線 */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent calc(var(--line-height-body) * 1em - 1px),
+    var(--color-ruled-line) calc(var(--line-height-body) * 1em - 1px),
+    var(--color-ruled-line) calc(var(--line-height-body) * 1em)
+  );
+  background-size: 100% calc(var(--line-height-body) * 1em);
+  background-position: 0 0.5rem;
+}
+
+.review-mode__textarea:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+.review-mode__textarea::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+/* ボタン */
+.review-mode__button {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-body);
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.review-mode__button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.review-mode__button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* 最終ラウンド用ボタン */
+.review-mode__button--final {
+  background-color: var(--color-success);
+}
+
+.review-mode__button--final:hover {
+  background-color: var(--color-success-hover);
+}
+
+/* スクリーンリーダー専用 */
+.review-mode__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* デスクトップ */
+@media (min-width: 768px) {
+  .review-mode {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+  }
+
+  .review-mode__textarea {
+    min-height: 300px;
+  }
+}
+
+/* ハイコントラストモード対応 */
+@media (prefers-contrast: high) {
+  .review-mode__textarea {
+    border-color: var(--color-text-primary);
+  }
+
+  .review-mode__button {
+    border: 2px solid var(--color-text-primary);
+  }
+}

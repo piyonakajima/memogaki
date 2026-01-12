@@ -1,11 +1,70 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* ========================================
+   * Design Tokens - Notebook Theme
+   * ======================================== */
+
+  /* Color Palette - Background */
+  --color-bg-primary: #fff9e6;
+  --color-bg-secondary: #fff5d6;
+  --color-bg-paper: #fffbf0;
+
+  /* Color Palette - Text */
+  --color-text-primary: #3d3d3d;
+  --color-text-secondary: #5d4e37;
+  --color-text-muted: #8b7355;
+  --color-text-placeholder: #b8a88a;
+
+  /* Color Palette - Border & Lines */
+  --color-border: #e0d5c0;
+  --color-border-focus: #c4a35a;
+  --color-ruled-line: #e8dcc8;
+
+  /* Semantic Colors */
+  --color-primary: #c4a35a;
+  --color-primary-hover: #b8943d;
+  --color-success: #5d8a3e;
+  --color-success-hover: #4a7030;
+  --color-warning: #d4652e;
+  --color-warning-text: #c94a1a;
+  --color-muted: #a89880;
+  --color-muted-hover: #8b7d68;
+
+  /* Typography */
+  --font-family-base: 'Hiragino Sans', 'Meiryo', system-ui, sans-serif;
+  --font-size-timer: 72px;
+  --font-size-timer-sm: 48px;
+  --font-size-heading: 2rem;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+  --line-height-body: 1.6;
+  --line-height-heading: 1.3;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+
+  /* Layout */
+  --max-width-content: 640px;
+  --border-radius: 8px;
+
+  /* Shadows */
+  --shadow-paper: 0 2px 8px rgba(139, 115, 85, 0.1);
+
+  /* Footer */
+  --footer-height: 80px;
+
+  /* ========================================
+   * Global Styles
+   * ======================================== */
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-body);
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,9 +84,9 @@ body {
 }
 
 #root {
-  max-width: 1280px;
+  max-width: var(--max-width-content);
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--spacing-lg);
 }
 
 .app {
@@ -39,7 +98,67 @@ body {
 }
 
 .app h1 {
-  font-size: 2rem;
+  font-size: var(--font-size-heading);
   font-weight: 700;
-  margin-bottom: 16px;
+  line-height: var(--line-height-heading);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+/* フッター対応のパディング */
+.app--with-footer {
+  padding-bottom: calc(var(--footer-height) + var(--spacing-lg));
+}
+
+/* 完了画面 */
+.done-screen {
+  width: 100%;
+  max-width: var(--max-width-content);
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.done-screen h2 {
+  font-size: 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+.done-screen__text {
+  width: 100%;
+  min-height: 200px;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-paper);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  white-space: pre-wrap;
+  text-align: left;
+  box-shadow: var(--shadow-paper);
+}
+
+.done-screen button {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-body);
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.done-screen button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.done-screen button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
 }

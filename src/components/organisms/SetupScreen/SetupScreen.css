@@ -1,0 +1,165 @@
+/* SetupScreen - セッション設定画面 */
+
+.setup-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-sm);
+  text-align: center;
+}
+
+.setup-screen__title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.setup-screen__description {
+  font-size: var(--font-size-body);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: var(--line-height-body);
+}
+
+.setup-screen__round-setting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.setup-screen__label {
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.setup-screen__round-input {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.setup-screen__adjust-button {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-paper);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.setup-screen__adjust-button:hover:not(:disabled) {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border-focus);
+}
+
+.setup-screen__adjust-button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.setup-screen__adjust-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.setup-screen__input {
+  width: 80px;
+  height: 44px;
+  padding: var(--spacing-xs);
+  font-size: 1.5rem;
+  text-align: center;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-paper);
+  color: var(--color-text-primary);
+}
+
+.setup-screen__input:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 2px rgba(196, 163, 90, 0.2);
+}
+
+/* スピナーを非表示（Chrome, Safari, Edge） */
+.setup-screen__input::-webkit-outer-spin-button,
+.setup-screen__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* スピナーを非表示（Firefox） */
+.setup-screen__input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.setup-screen__unit {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  margin-left: 0.25rem;
+}
+
+.setup-screen__start-button {
+  width: 100%;
+  max-width: 300px;
+  min-height: 56px;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: var(--color-success);
+  color: white;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: var(--spacing-sm);
+}
+
+.setup-screen__start-button:hover {
+  background-color: var(--color-success-hover);
+}
+
+.setup-screen__start-button:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.setup-screen__start-button:active {
+  transform: scale(0.98);
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+  .setup-screen {
+    padding: 3rem var(--spacing-lg);
+    gap: var(--spacing-lg);
+  }
+
+  .setup-screen__title {
+    font-size: 2.5rem;
+  }
+
+  .setup-screen__description {
+    font-size: 1.125rem;
+  }
+
+  .setup-screen__input {
+    width: 100px;
+    font-size: 2rem;
+  }
+
+  .setup-screen__adjust-button {
+    width: 48px;
+    height: 48px;
+  }
+}

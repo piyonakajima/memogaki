@@ -10,6 +10,10 @@ export interface WritingModeProps {
   placeholder?: string;
   /** 自動開始フラグ */
   autoStart?: boolean;
+  /** 現在のラウンド番号 */
+  currentRound?: number;
+  /** 合計ラウンド数 */
+  totalRounds?: number;
   /** テキスト変更時コールバック */
   onChange?: (text: string) => void;
   /** 書き出し完了時コールバック（タイマー終了時） */
