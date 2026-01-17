@@ -32,6 +32,39 @@
   gap: var(--spacing-sm);
 }
 
+.memo-list__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.memo-list__item {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.memo-list__item:last-child {
+  border-bottom: none;
+}
+
+.memo-list__round {
+  flex-shrink: 0;
+  font-weight: bold;
+  color: var(--color-text-secondary);
+}
+
+.memo-list__content {
+  flex: 1;
+  word-break: break-word;
+}
+
+.memo-list__item--empty .memo-list__content {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
 .memo-list__stats {
   padding-bottom: 0.5rem;
 }
