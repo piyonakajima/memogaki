@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
-import { adsenseConfig } from '../../../config/adsense';
+import { adsenseConfig, loadAdSenseScript } from '../../../config/adsense';
 import type { AdBannerProps, AdLoadState } from '../../../types/adsense';
 import './AdBanner.css';
 
@@ -38,18 +38,24 @@ export function AdBanner({ className }: AdBannerProps) {
     if (initialized.current) return;
     initialized.current = true;
 
-    // 広告ブロッカー検出のタイムアウト（3秒）
+    // 広告ブロッカー検出のタイムアウト（5秒）
     const timeout = setTimeout(() => {
       setLoadState((prev) => (prev === 'loading' ? 'blocked' : prev));
-    }, 3000);
+    }, 5000);
 
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-      // 非同期で状態更新をスケジュール
-      setTimeout(() => setLoadState('loaded'), 0);
-    } catch {
-      setTimeout(() => setLoadState('error'), 0);
-    }
+    // AdSenseスクリプトを動的に読み込んでから広告を初期化
+    loadAdSenseScript()
+      .then(() => {
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          setLoadState('loaded');
+        } catch {
+          setLoadState('error');
+        }
+      })
+      .catch(() => {
+        setLoadState('error');
+      });
 
     return () => clearTimeout(timeout);
   }, [isConfigValid]);
