@@ -74,7 +74,7 @@ export function AdBanner({ className }: AdBannerProps) {
         data-ad-client={adsenseConfig.publisherId}
         data-ad-slot={adsenseConfig.slotId}
         data-ad-format="horizontal"
-        data-full-width-responsive="true"
+        data-full-width-responsive="false"
         {...(adsenseConfig.testMode && { 'data-adtest': 'on' })}
       />
     </div>
